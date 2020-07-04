@@ -1,0 +1,30 @@
+service: ailog-cron
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:*"
+
+      Resource:
+        - "*"
+
+functions:
+  cron:
+    handler: handler.run
+    environment:
+      GITHUB_TOKEN: ${file(../config.json):GITHUB_TOKEN}
+      GITHUB_REPOSITORY: ${file(../config.json):GITHUB_REPOSITORY}
+
+    timeout: 900 # optional, in seconds, default is 6
+    events:
+      # 11:30 PM Tuesday, Korea Standard Time (KST) is
+      # 2:30 PM Tuesday, Coordinated Universal Time (UTC)
+      # run every day at 23:30PM KST/14:30 UTC
+      - schedule: cron(30 14 * * ? *) 
+
+plugins:
+  - serverless-python-requirements

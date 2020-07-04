@@ -1,0 +1,8 @@
+Flask==1.1.2
+line-bot-sdk
+werkzeug
+boto3
+Werkzeug
+pytz
+validators
+urlextract

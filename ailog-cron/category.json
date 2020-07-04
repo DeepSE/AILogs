@@ -1,0 +1,14 @@
+{
+    "video": [
+        "https://youtube.", 
+        "https://youtu.", 
+        "https://www.youtube."
+    ],
+    "code": [
+        "https://github.", 
+        "https://colab."
+    ],
+    "paper": [
+        "https://arxiv."
+    ]
+}

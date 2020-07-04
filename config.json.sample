@@ -1,0 +1,6 @@
+{
+    "LINE_CHANNEL_SECRET": "...",
+    "LINE_CHANNEL_ACCESS_TOKEN": "...",
+    "GITHUB_TOKEN": "...",
+    "GITHUB_REPOSITORY": "..."
+}
